@@ -1,10 +1,11 @@
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import type { Recipe } from "../data/recipes";
 
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   const style: CSSProperties = { backgroundColor: recipe.color };
   return (
-    <article className="recipe-card">
+    <Link href={"/recipe/" + recipe.id} className="recipe-card recipe-card-link" aria-label={"View " + recipe.title + " recipe"}>
       <div className="recipe-art" style={style} aria-hidden="true">
         <span>{recipe.emoji}</span>
       </div>
@@ -17,6 +18,6 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           <span>✦ {recipe.difficulty}</span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
