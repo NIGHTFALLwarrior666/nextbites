@@ -1,17 +1,19 @@
+import Link from "next/link";
+
 export default function NavBar() {
   return (
     <header className="site-header">
       <div className="header-inner container">
-        <a className="brand" href="#top" aria-label="NextBites home">
+        <Link className="brand" href="/#top" aria-label="NextBites home">
           <span className="brand-mark">✳</span>
           next<span>bites</span><i>.</i>
-        </a>
+        </Link>
         <nav aria-label="Main navigation" className="nav-links">
-          <a href="#top">Home</a>
-          <a href="#recipes">Recipes</a>
-          <a href="#about">About</a>
+          <Link href="/#top">Home</Link>
+          <Link href="/#recipes">Recipes</Link>
+          <Link href="/#about">About</Link>
         </nav>
-        <a className="nav-button" href="#recipes">Find a recipe ↗</a>
+        <Link className="nav-button" href="/#recipes">Find a recipe ↗</Link>
       </div>
     </header>
   );
